@@ -108,6 +108,10 @@ struct BigInteger{
     bool operator <= (const BigInteger& b) {
         return !(b > *this);
     }
+    
+    bool operator >= (const BigInteger& b) {
+        return !(b < *this);
+    }
 
     bool operator == (const BigInteger& b) {
         return !(b < *this) && !(*this < b);
@@ -115,6 +119,31 @@ struct BigInteger{
 
     BigInteger operator += (const BigInteger& b) {
         *this = *this + b;
+        return *this;
+    }
+    
+    BigInteger operator -= (const BigInteger& b) {
+        *this = *this - b;
+        return *this;
+    }
+    
+    BigInteger operator ++ (int) {
+        *this = *this + 1;
+        return *this;
+    }
+    
+    BigInteger operator -- (int) {
+        *this = *this - 1;
+        return *this;
+    }
+    
+    BigInteger operator ++ () {
+        *this = *this + 1;
+        return *this;
+    }
+
+    BigInteger operator -- () {
+        *this = *this - 1;
         return *this;
     }
 };
@@ -130,4 +159,3 @@ ostream& operator << (ostream &out, const BigInteger& x) {
     out << x.str();
     return out;
 }
-
