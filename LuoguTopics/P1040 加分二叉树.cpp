@@ -51,8 +51,8 @@ void print_anser(int left,int right){
 	}
 }
 int main(){
-	//freopen("in.txt","r",stdin);
-	//freopen("out.txt","w",stdout);
+	freopen("in.txt","r",stdin);
+	freopen("out.txt","w",stdout);
 	cin >> n;
 	int MIN = 200;
 	for(int i = 1;i <= n;i++){
