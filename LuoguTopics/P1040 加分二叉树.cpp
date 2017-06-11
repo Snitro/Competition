@@ -41,19 +41,18 @@ void print_anser(int left,int right){
 		return;
 	}
 	cout << F_id[left][right] << " ";
-	if(right - left == 1){
-		if(F_id[left][right] == left)
-			cout << right << " ";
-		else
-			cout << left << " ";
-	}else{
+	if(F_id[left][right] == left)
+		print_anser(F_id[left][right] + 1,right);
+	else if(F_id[left][right] == right)
+		print_anser(left,F_id[left][right] - 1);
+	else{
 		print_anser(left,F_id[left][right] - 1);
 		print_anser(F_id[left][right] + 1,right);
 	}
 }
 int main(){
-	freopen("in.txt","r",stdin);
-	freopen("out.txt","w",stdout);
+	//freopen("in.txt","r",stdin);
+	//freopen("out.txt","w",stdout);
 	cin >> n;
 	int MIN = 200;
 	for(int i = 1;i <= n;i++){
