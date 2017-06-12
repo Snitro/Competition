@@ -1,6 +1,7 @@
 #include<iostream>
 #include<cstdio>
 using namespace std;
+int n;
 bool judge(int i){
 	if(i == 0)
 		return false;
@@ -9,19 +10,15 @@ bool judge(int i){
 			return false;
 	return true;
 }
-void guess(int i){
-	for(int a = 2;a <= i / 2;a++)
-		if(judge(a) && judge(i - a)){
-			cout << i << "=" << a << "+" << i - a << endl;
-			return;
-		}
-}
 int main(){
 	freopen("in.txt","r",stdin);
-	int n;
 	cin >> n;
-	for(int i = 4;i <= n;i += 2){
-		guess(i);
-	}
+	for(int i = 2;i <= n;i++)
+		if(judge(i))
+			for(int j = i;j + i <= n;j++)
+				if(judge(j) && judge(n - i - j)){
+					cout << i << " " << j << " " << (n - i - j) << endl;
+					return 0;
+				}
 	return 0;
 }
