@@ -17,10 +17,7 @@ int main(){
 	cin >> a >> b;
 	int d,x,y;
 	gcd(a,b,d,x,y);
-	int B = b / d;
-	while(x > 0)
-		x -= B;
-	x += B;
-	cout << x;
+	cout << x << endl;
+	cout << (x + b) % b;
 	return 0;
 }
