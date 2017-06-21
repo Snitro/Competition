@@ -21,14 +21,14 @@ void add(int from,int to) {
 	head[from] = edge_len;
 }
 
-bool dp(int id) {
+bool dfs(int id) {
 	int tot = 0;
 	int y = 0;
 	visit[id] = true;
 	for (int i = head[id]; i != 0; i = edge[i].next) {
 		int to = edge[i].to;
 		if (!visit[to]) {
-			bool re = dp(to);
+			bool re = dfs(to);
 			tot++;
 			if (re)
 				y++;
@@ -55,6 +55,6 @@ int main() {
 		add(a,b);
 		add(b,a);
 	}
-	dp(1);
+	dfs(1);
 	cout << F[1] << endl;
 }
