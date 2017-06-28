@@ -54,8 +54,12 @@ int main() {
         }
     }
     cin >> beyond;
-    if (e == 0)
-        e = small[sl].b - (expect - small[sl].a) * beyond;
+    if (e == 0) {
+    	if (bl == 0)
+        	e = small[sl].b - (expect - small[sl].a) * beyond;
+        else 
+        	e = small[sl].b - (small[sl].b - big[1].b) / (big[1].a - small[sl].a) * (expect - small[sl].a);
+    }
     if (small[sl].a != expect - 1) {
         sl++;
         small[sl].a = expect - 1;
