@@ -127,7 +127,7 @@ struct BigInteger{
         return *this;
     }
     
-    BigInteger operator != (const BigInteger& b) const{
+    bool operator != (const BigInteger& b) const{
     	return !(*this == b);
 	}
     
