@@ -62,7 +62,7 @@ struct BigInteger{
             len--;
     }
 
-    BigInteger operator * (const BigInteger& b) {
+    BigInteger operator * (const BigInteger& b) const{
         BigInteger c; c.len = len + b.len;
         for(int i = 0; i < len; i++)
           for(int j = 0; j < b.len; j++)
@@ -75,7 +75,7 @@ struct BigInteger{
         return c;
     }
 
-    BigInteger operator - (const BigInteger& b) {
+    BigInteger operator - (const BigInteger& b) const{
         BigInteger c; c.len = 0;
         for(int i = 0, g = 0; i < len; i++) {
             int x = s[i] - g;
@@ -105,15 +105,15 @@ struct BigInteger{
         return b < *this;
     }
 
-    bool operator <= (const BigInteger& b) {
+    bool operator <= (const BigInteger& b) const{
         return !(b > *this);
     }
     
-    bool operator >= (const BigInteger& b) {
+    bool operator >= (const BigInteger& b) const{
         return !(b < *this);
     }
 
-    bool operator == (const BigInteger& b) {
+    bool operator == (const BigInteger& b) const{
         return !(b < *this) && !(*this < b);
     }
 
@@ -126,6 +126,10 @@ struct BigInteger{
         *this = *this - b;
         return *this;
     }
+    
+    BigInteger operator != (const BigInteger& b) const{
+    	return !(*this == b);
+	}
     
     BigInteger operator ++ (int) {
         *this = *this + 1;
