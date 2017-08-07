@@ -8,7 +8,7 @@ int n, m;
 
 queue <int> Q;
 
-int ans[1005];
+long long ans[1005];
 
 bool flg[1005];
 
@@ -64,7 +64,7 @@ int main() {
 		}
 	}
 	
-	cout << ans[n];
+	cout << ans[n] % mod;
 	
 	return 0;
 }
