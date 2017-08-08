@@ -127,5 +127,6 @@ int main() {
         }
     }
     printf("Sorted sequence cannot be determined.");
+    
     return 0;
 }
