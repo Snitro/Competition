@@ -53,7 +53,7 @@ bool check(int a, int b) {
 }
 
 int main() {
-//	freopen("in.txt", "r", stdin);
+	freopen("in.txt", "r", stdin);
 	
 	cin >> n >> m;
 	
