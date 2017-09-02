@@ -4,7 +4,7 @@
 using namespace std;
 struct set;
 queue<set> que;
-int n,p,c,m;//nÎªĞ¡ÅóÓÑÊı   p¹ØÏµÊı   CĞ¡ÅóÓÑ   ³ÔmÃë¡£
+int n,p,c,m;//nä¸ºå°æœ‹å‹æ•°   på…³ç³»æ•°   Cå°æœ‹å‹   åƒmç§’ã€‚
 int head[5000005];
 bool has[5000005];
 int i = 0;
