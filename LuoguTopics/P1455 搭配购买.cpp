@@ -10,7 +10,7 @@ map <int, int> M;
 
 int f[10005];
 
-int F[5005];
+int F[10005];
 
 int len;
 
