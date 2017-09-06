@@ -63,24 +63,6 @@ void update(int L, int R, int add, int l, int r, int rt) {
 	PushUP(rt);
 }
 
-int query(int L, int R, int l, int r, int rt) {
-	if (L <= l && r <= R)
-		return MIN[rt];
-	
-	PushDown(rt);
-	
-	int m = (l + r) >> 1;
-	int ret = 999999999;
-	
-	if (L <= m)
-		ret = query(L, R, lson);
-	
-	if (m < R)
-		ret = min(ret, query(L, R, rson));
-		
-	return ret;
-}
-
 int main() {
 	freopen("in.txt", "r", stdin);
 	
@@ -93,18 +75,12 @@ int main() {
 	for (int i = 1; i <= m; i++) {
 		scanf("%d%d%d", &d, &s, &t);
 		
-		if (MIN[1] >= d) {
-			update(s, t, -d, root);
-			continue;
-		}
+		update(s, t, -d, root);
 		
-		int Min = query(s, t, root);
-		
-		if (Min < d) {
-			printf("-1\n%d\n", i);
+		if (MIN[1] < 0) {
+			printf("-1\n%d", i);
 			return 0;
-		} else 
-			update(s, t, -d, root);
+		}
 	}
 	
 	cout << 0 << endl;
