@@ -38,7 +38,7 @@ int main() {
 			stack[++top] = len;
 		} else {
 			int y = lower_bound(stack + 1, stack + top + 1, len - x + 1) - stack;
-            printf("%d\n", last = datas[stack[y]]);
+            		printf("%d\n", last = datas[stack[y]]);
 		}
 	}
 	
