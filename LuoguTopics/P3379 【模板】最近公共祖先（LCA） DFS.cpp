@@ -52,7 +52,7 @@ int getFrom(int a) {
     return f[a] = getFrom(f[a]);
 }
 
-void merge(int a, int b) { // 把 a 合并到 b 下面 
+void merge(int a, int b) { // 掳脩 a 潞脧虏垄碌陆 b 脧脗脙忙 
     f[getFrom(a)] = getFrom(b);
 }
 
