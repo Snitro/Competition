@@ -68,9 +68,7 @@ void dfs(int x) {
 
 		if (i > 1)
 			for (int j = 0; j <= i - 2; j++)
-				nodes[x].f[i] = max(nodes[x].f[i],
-				                    left.f[j] + right.f[i - 2 - j] + value[nodes[x].left] +
-				                    value[nodes[x].right]);
+				nodes[x].f[i] = max(nodes[x].f[i], left.f[j] + right.f[i - 2 - j] + value[nodes[x].left] + value[nodes[x].right]);
 	}
 }
 
