@@ -44,9 +44,9 @@ int main() {
 		for (int k = 1; k <= n; k++)
 			for (int i = 1; i <= n; i++)
 				for (int j = 1; j <= n; j++)
-					if (map[k][j][t - 1] && map[j][i][t - 1]) {
-						map[k][i][t] = true;
-						dist[k][i] = 1;
+					if (map[i][k][t - 1] && map[k][j][t - 1]) {
+						map[i][j][t] = true;
+						dist[i][j] = 1;
 					}
 	
 	for (int k = 1; k <= n; k++)
