@@ -57,9 +57,9 @@ int main() {
     
     int ans = 0;
     
-    for (int j = tot - 1; j >= 0; j--) {
-        ans |= (1 << j) * (!(zero & (1 << j)) && (one & (1 << j)) && (ans | (1 << j)) <= m);
-    }
+    for (int j = tot - 1; j >= 0; j--)
+    	if (!(zero & (1 << j)) && (one & (1 << j)) && (ans | (1 << j)) <= m) 
+        	ans |= (1 << j);
     
     printf("%d", count(ans));
     
