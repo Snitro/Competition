@@ -20,34 +20,34 @@ struct Position {
 void solve(double move) {
     double X, Y, temp;
     X = Y = 0;
-    
+	
     for (int i = 1; i <= n; i++) {
-        temp = sqrt((x - positions[i].x) * (x - positions[i].x) + (y - positions[i].y) * (y - positions[i].y));
-        if (temp == 0)
-            continue;
-        X += positions[i].power / temp * (positions[i].x - x);
-        Y += positions[i].power / temp * (positions[i].y - y);
-    }
-    
+	    temp = sqrt((x - positions[i].x) * (x - positions[i].x) + (y - positions[i].y) * (y - positions[i].y));
+	    if (temp == 0)
+			continue;
+	    X += positions[i].power / temp * (positions[i].x - x);
+	    Y += positions[i].power / temp * (positions[i].y - y);
+	}
+	
     temp = sqrt(X * X + Y * Y);
-    
+	
     x += move / temp * X;
     y += move / temp * Y;
 }
 
 int main() {
     freopen("in.txt", "r", stdin);
-    
+	
     scanf("%d", &n);
-    
+	
     for (int i = 1; i <= n; i++)
-        scanf("%d%d%d", &positions[i].x, &positions[i].y, &positions[i].power);
-    
-    double move = 10000, tx, ty;
-    
+	    scanf("%d%d%d", &positions[i].x, &positions[i].y, &positions[i].power);
+	
+    double move = 5000, tx, ty;
+	
     while (true) {
-        tx = x;
-        ty = y;
+	    tx = x;
+	    ty = y;
         
         solve(move);
         
