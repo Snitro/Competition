@@ -106,11 +106,11 @@ struct BigInteger{
     }
 
     bool operator <= (const BigInteger& b) const{
-        return !(b > *this);
+        return (b > *this);
     }
     
     bool operator >= (const BigInteger& b) const{
-        return !(b < *this);
+        return (b < *this);
     }
 
     bool operator == (const BigInteger& b) const{
