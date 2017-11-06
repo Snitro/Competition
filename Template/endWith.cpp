@@ -1,4 +1,4 @@
-bool startWith(string n,string m){
+bool endWith(string n,string m){
     if(n.size() < m.size())
         return false;
     else{
